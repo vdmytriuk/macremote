@@ -1,0 +1,340 @@
+<!doctype html>
+<html lang="{{lang}}">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>{{meta.title}}</title>
+<meta name="description" content="{{meta.description}}">
+<meta property="og:title" content="{{meta.title}}">
+<meta property="og:description" content="{{meta.description}}">
+<meta property="og:image" content="https://vdmytriuk.github.io/macremote/assets/icon-512.png">
+<meta property="og:type" content="website">
+<meta name="theme-color" content="#050507">
+<link rel="alternate" hreflang="en" href="https://vdmytriuk.github.io/macremote/">
+<link rel="alternate" hreflang="uk" href="https://vdmytriuk.github.io/macremote/uk/">
+<link rel="alternate" hreflang="x-default" href="https://vdmytriuk.github.io/macremote/">
+<link rel="icon" href="{{base}}assets/favicon.png">
+<link rel="apple-touch-icon" href="{{base}}assets/icon-128.png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="{{base}}style.css">
+</head>
+<body data-lang="{{lang}}" data-base="{{base}}">
+
+<header class="nav">
+  <div class="nav-inner">
+    <a class="logo" href="#top"><img src="{{base}}assets/icon-128.png" alt="" width="28" height="28"> MacRemote</a>
+    <nav>
+      <a href="#scene">{{nav.features}}</a>
+      <a href="#how">{{nav.how}}</a>
+      <a href="#install">{{nav.install}}</a>
+      <a href="#faq">{{nav.faq}}</a>
+      <a class="lang" href="{{switchHref}}" hreflang="{{switchLang}}">{{switchLabel}}</a>
+      <a class="btn small" href="#install">{{nav.cta}}</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+
+<!-- ===== Hero ===== -->
+<section class="hero" id="top">
+  <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
+  <div class="hero-inner">
+    <div class="hero-text">
+      <p class="eyebrow reveal" style="--i:0">{{hero.eyebrow}}</p>
+      <h1 class="reveal" style="--i:1"><span>{{hero.h1a}}</span> <span>{{hero.h1b}}</span> <span class="grad">{{hero.h1c}}</span></h1>
+      <p class="lead reveal" style="--i:2">{{hero.lead}}</p>
+      <div class="cmd reveal" style="--i:3">
+        <code>{{install.cmd}}</code>
+        <button type="button" data-copy="{{install.cmd}}" data-copied="{{common.copied}}">{{common.copy}}</button>
+      </div>
+      <div class="cta reveal" style="--i:4">
+        <a class="btn primary" href="#install">{{hero.ctaInstall}}</a>
+        <a class="btn ghost" href="#scene">{{hero.ctaFeatures}}</a>
+      </div>
+      <p class="meta reveal" style="--i:5">{{hero.meta}}</p>
+    </div>
+
+    <div class="hero-device" id="heroTilt" aria-hidden="true">
+      <div class="float">
+        <div class="phone" id="heroPhone">
+          <div class="body"></div>
+          <div class="notch"></div>
+          <div class="screen">
+            <div class="ptop"><span class="dot"></span>MacBook Pro</div>
+            <div class="ppad"><span class="finger"></span>{{ui.trackpad}}</div>
+            <div class="pbar"><span>{{ui.left}}</span><span class="k">⌨</span><span>{{ui.right}}</span></div>
+            <div class="ptabs"><b>{{ui.trackpad}}</b><span>{{ui.apps}}</span><span>{{ui.screen}}</span><span>{{ui.media}}</span></div>
+          </div>
+          <div class="back"><img src="{{base}}assets/icon-128.png" alt="" width="48" height="48"></div>
+        </div>
+      </div>
+      <div class="glow"></div>
+    </div>
+  </div>
+  <a class="scroll-hint" href="#scene"><span></span>{{hero.scroll}}</a>
+</section>
+
+<!-- ===== Scroll scene ===== -->
+<section class="scene" id="scene" data-scene style="--segments:5">
+  <div class="stage">
+    <div class="stage-device" aria-hidden="true">
+      <div class="phone spin" id="scenePhone">
+        <div class="body"></div>
+        <div class="notch"></div>
+
+        <div class="screen seg" data-seg="0">
+          <div class="ptop"><span class="dot"></span>MacBook Pro</div>
+          <div class="ppad"><span class="finger drift"></span>{{ui.trackpad}}</div>
+          <div class="pbar"><span>{{ui.left}}</span><span class="k">⌨</span><span>{{ui.right}}</span></div>
+          <div class="ptabs"><b>{{ui.trackpad}}</b><span>{{ui.apps}}</span><span>{{ui.screen}}</span><span>{{ui.media}}</span></div>
+        </div>
+
+        <div class="screen seg" data-seg="1">
+          <div class="ptop"><span class="dot"></span>MacBook Pro</div>
+          <div class="ppad small">{{ui.trackpad}}</div>
+          <div class="pkbd">
+            <div class="typing">{{ui.typing}}<i class="caret"></i></div>
+            <div class="krow"><span>esc</span><span>tab</span><span class="on">⌘</span><span>⌥</span><span>⌃</span><span>⇧</span><span>del</span></div>
+            <div class="krow"><span>home</span><span>pgup</span><span>↑</span><span>pgdn</span><span>end</span><span>⌫</span></div>
+            <div class="krow"><span>⌘tab</span><span>←</span><span>↓</span><span>→</span><span class="wide">space</span><span>↩</span></div>
+          </div>
+          <div class="ptabs"><b>{{ui.trackpad}}</b><span>{{ui.apps}}</span><span>{{ui.screen}}</span><span>{{ui.media}}</span></div>
+        </div>
+
+        <div class="screen seg" data-seg="2">
+          <div class="ptop"><span class="dot"></span>MacBook Pro</div>
+          <div class="plabel">{{ui.running}}</div>
+          <div class="pgrid">
+            <i style="--c:#ff9f0a"></i><i style="--c:#30d158"></i><i class="on" style="--c:#0a84ff"></i><i style="--c:#bf5af2"></i>
+            <i style="--c:#ff453a"></i><i style="--c:#64d2ff"></i><i style="--c:#ffd60a"></i><i style="--c:#8e8e93"></i>
+          </div>
+          <div class="plabel">{{ui.allApps}}</div>
+          <div class="plist"><span></span><span></span><span></span><span></span></div>
+          <div class="ptabs"><span>{{ui.trackpad}}</span><b>{{ui.apps}}</b><span>{{ui.screen}}</span><span>{{ui.media}}</span></div>
+        </div>
+
+        <div class="screen seg" data-seg="3">
+          <div class="ptop"><span class="dot"></span>MacBook Pro</div>
+          <div class="pmirror">
+            <div class="desk">
+              <div class="win w1"></div><div class="win w2"></div>
+              <div class="cursor"></div>
+              <div class="scan"></div>
+            </div>
+          </div>
+          <div class="pbar"><span>{{ui.left}}</span><span class="k">⌨</span><span>{{ui.right}}</span></div>
+          <div class="ptabs"><span>{{ui.trackpad}}</span><span>{{ui.apps}}</span><b>{{ui.screen}}</b><span>{{ui.media}}</span></div>
+        </div>
+
+        <div class="screen seg" data-seg="4">
+          <div class="ptop"><span class="dot"></span>MacBook Pro</div>
+          <div class="pmedia">
+            <div class="row big"><span>⏮</span><span class="play">⏯</span><span>⏭</span></div>
+            <div class="plabel">{{ui.volume}}</div>
+            <div class="row"><span>−</span><span>🔇</span><span>+</span></div>
+            <div class="plabel">{{ui.brightness}}</div>
+            <div class="row"><span>☀︎−</span><span>☀︎+</span></div>
+          </div>
+          <div class="ptabs"><span>{{ui.trackpad}}</span><span>{{ui.apps}}</span><span>{{ui.screen}}</span><b>{{ui.media}}</b></div>
+        </div>
+      </div>
+      <div class="glow"></div>
+    </div>
+
+    <div class="captions">
+      <div class="caption" data-seg="0"><p class="eyebrow">{{scene.s0.eyebrow}}</p><h2>{{scene.s0.h2}}</h2><p>{{scene.s0.p}}</p></div>
+      <div class="caption" data-seg="1"><p class="eyebrow">{{scene.s1.eyebrow}}</p><h2>{{scene.s1.h2}}</h2><p>{{scene.s1.p}}</p></div>
+      <div class="caption" data-seg="2"><p class="eyebrow">{{scene.s2.eyebrow}}</p><h2>{{scene.s2.h2}}</h2><p>{{scene.s2.p}}</p></div>
+      <div class="caption" data-seg="3"><p class="eyebrow">{{scene.s3.eyebrow}}</p><h2>{{scene.s3.h2}}</h2><p>{{scene.s3.p}}</p></div>
+      <div class="caption" data-seg="4"><p class="eyebrow">{{scene.s4.eyebrow}}</p><h2>{{scene.s4.h2}}</h2><p>{{scene.s4.p}}</p></div>
+    </div>
+
+    <div class="progress" aria-hidden="true"><i data-seg="0"></i><i data-seg="1"></i><i data-seg="2"></i><i data-seg="3"></i><i data-seg="4"></i></div>
+  </div>
+</section>
+
+<!-- ===== Demos ===== -->
+<section class="demos" id="demos">
+  <h2 class="reveal">{{demos.h2}}</h2>
+  <p class="sub reveal" style="--i:1">{{demos.sub}}</p>
+  <div class="grid">
+
+    <article class="demo reveal" style="--i:0">
+      <div class="art">
+        <div class="macwin">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="cur"></div>
+          <div class="target"></div>
+        </div>
+        <div class="minipad"><span class="finger drift2"></span></div>
+      </div>
+      <h3>{{demos.d0.h3}}</h3>
+      <p>{{demos.d0.p}}</p>
+    </article>
+
+    <article class="demo reveal" style="--i:1">
+      <div class="art">
+        <div class="macwin doc">
+          <div class="bar"><i></i><i></i><i></i></div>
+          <div class="text"><span class="typed" data-text="{{demos.typed}}"></span><i class="caret"></i></div>
+        </div>
+      </div>
+      <h3>{{demos.d1.h3}}</h3>
+      <p>{{demos.d1.p}}</p>
+    </article>
+
+    <article class="demo reveal" style="--i:2">
+      <div class="art">
+        <div class="dock">
+          <i style="--c:#ff9f0a"></i><i style="--c:#30d158"></i><i style="--c:#0a84ff" class="hop"></i><i style="--c:#bf5af2"></i><i style="--c:#ff453a"></i><i style="--c:#64d2ff"></i>
+        </div>
+        <div class="tiles">
+          <i style="--c:#ff9f0a"></i><i style="--c:#30d158"></i><i style="--c:#0a84ff" class="on"></i><i style="--c:#bf5af2"></i>
+        </div>
+      </div>
+      <h3>{{demos.d2.h3}}</h3>
+      <p>{{demos.d2.p}}</p>
+    </article>
+
+    <article class="demo reveal" style="--i:3">
+      <div class="art">
+        <div class="macscreen"><div class="win w1"></div><div class="win w2"></div></div>
+        <div class="beam"></div>
+        <div class="miniphone"><div class="mini"><div class="win w1"></div><div class="win w2"></div><div class="tap"></div></div></div>
+      </div>
+      <h3>{{demos.d3.h3}}</h3>
+      <p>{{demos.d3.p}}</p>
+    </article>
+
+    <article class="demo reveal" style="--i:4">
+      <div class="art">
+        <div class="hud">
+          <div class="spk">🔊</div>
+          <div class="bars"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div>
+        </div>
+        <div class="playbtn">⏯</div>
+      </div>
+      <h3>{{demos.d4.h3}}</h3>
+      <p>{{demos.d4.p}}</p>
+    </article>
+
+    <article class="demo reveal" style="--i:5">
+      <div class="art">
+        <div class="link">
+          <div class="node mac"><i></i></div>
+          <div class="wire"><span></span><span></span><span></span></div>
+          <div class="node ph"><i></i></div>
+          <div class="cloud">☁︎<b></b></div>
+        </div>
+      </div>
+      <h3>{{demos.d5.h3}}</h3>
+      <p>{{demos.d5.p}}</p>
+    </article>
+
+  </div>
+</section>
+
+<!-- ===== How it works ===== -->
+<section class="how" id="how">
+  <h2 class="reveal">{{how.h2}}</h2>
+  <ol class="steps">
+    <li class="reveal" style="--i:0"><span class="num">1</span><h3>{{how.s1.h3}}</h3><p>{{how.s1.p}}</p></li>
+    <li class="reveal" style="--i:1"><span class="num">2</span><h3>{{how.s2.h3}}</h3><p>{{how.s2.p}}</p></li>
+    <li class="reveal" style="--i:2"><span class="num">3</span><h3>{{how.s3.h3}}</h3><p>{{how.s3.p}}</p></li>
+  </ol>
+  <div class="menu-demo reveal" style="--i:1" aria-hidden="true">
+    <div class="menubar"><span class="mb-icon">▮</span><span>{{menu.clock}}</span></div>
+    <div class="menu">
+      <div class="mi dim">{{menu.title}}</div>
+      <div class="mi dim">{{menu.clients}}</div>
+      <hr>
+      <div class="mi dim">http://192.168.1.10:8383</div>
+      <div class="mi hl">{{menu.qr}}</div>
+      <div class="mi">{{menu.copy}}</div>
+      <hr>
+      <div class="mi dim">{{menu.ax}}</div>
+      <div class="mi">{{menu.screen}}</div>
+      <div class="mi">{{menu.login}}</div>
+      <hr>
+      <div class="mi">{{menu.quit}}</div>
+    </div>
+    <div class="qr"><div class="qrgrid"></div><span>{{menu.scan}}</span></div>
+  </div>
+</section>
+
+<!-- ===== Install ===== -->
+<section class="install" id="install">
+  <h2 class="reveal">{{install.h2}}</h2>
+  <div class="two-col">
+    <div class="reveal" style="--i:0">
+      <h3>{{install.mac.h3}}</h3>
+      <p>{{install.mac.p1}}</p>
+      <div class="cmd">
+        <code>{{install.cmd}}</code>
+        <button type="button" data-copy="{{install.cmd}}" data-copied="{{common.copied}}">{{common.copy}}</button>
+      </div>
+      <p>{{install.mac.p2}}</p>
+      <p>{{install.mac.p3}}</p>
+      <details>
+        <summary>{{install.why.summary}}</summary>
+        <p>{{install.why.p1}}</p>
+        <p>{{install.why.p2}}</p>
+      </details>
+    </div>
+    <div class="reveal" style="--i:1">
+      <h3>{{install.phone.h3}}</h3>
+      <ol>
+        <li>{{install.phone.s1}}</li>
+        <li>{{install.phone.s2}}</li>
+        <li>{{install.phone.s3}}</li>
+        <li>{{install.phone.s4}}</li>
+        <li>{{install.phone.s5}}</li>
+      </ol>
+      <details>
+        <summary>{{install.req.summary}}</summary>
+        <ul>
+          <li>{{install.req.i1}}</li>
+          <li>{{install.req.i2}}</li>
+          <li>{{install.req.i3}}</li>
+        </ul>
+      </details>
+    </div>
+  </div>
+</section>
+
+<!-- ===== FAQ ===== -->
+<section class="faq" id="faq">
+  <h2 class="reveal">{{faq.h2}}</h2>
+  <details class="reveal" style="--i:0"><summary>{{faq.q1.q}}</summary><p>{{faq.q1.a}}</p></details>
+  <details class="reveal" style="--i:1"><summary>{{faq.q2.q}}</summary><p>{{faq.q2.a}}</p></details>
+  <details class="reveal" style="--i:2"><summary>{{faq.q3.q}}</summary><p>{{faq.q3.a}}</p></details>
+  <details class="reveal" style="--i:3"><summary>{{faq.q4.q}}</summary><p>{{faq.q4.a}}</p></details>
+  <details class="reveal" style="--i:4"><summary>{{faq.q5.q}}</summary><p>{{faq.q5.a}}</p></details>
+  <details class="reveal" style="--i:5"><summary>{{faq.q6.q}}</summary><p>{{faq.q6.a}}</p></details>
+  <details class="reveal" style="--i:6"><summary>{{faq.q7.q}}</summary><p>{{faq.q7.a}}</p></details>
+</section>
+
+<section class="final">
+  <div class="final-inner reveal">
+    <h2>{{final.h2}}</h2>
+    <p>{{final.p}}</p>
+    <div class="cmd center">
+      <code>{{install.cmd}}</code>
+      <button type="button" data-copy="{{install.cmd}}" data-copied="{{common.copied}}">{{common.copy}}</button>
+    </div>
+  </div>
+</section>
+
+</main>
+
+<footer>
+  <p><img src="{{base}}assets/icon-128.png" alt="" width="20" height="20"> MacRemote · {{footer.made}}</p>
+  <p><a href="{{switchHref}}" hreflang="{{switchLang}}">{{switchLabelLong}}</a> · <a href="https://github.com/vdmytriuk/macremote/issues">{{footer.report}}</a></p>
+</footer>
+
+<script src="{{base}}site.js"></script>
+</body>
+</html>

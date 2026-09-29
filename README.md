@@ -1,8 +1,13 @@
 # MacRemote — сайт
 
-Маркетинговий сайт і завантаження MacRemote: https://vdmytriuk.github.io/macremote/
+Маркетинговий сайт MacRemote: https://vdmytriuk.github.io/macremote/ (англійська) і
+https://vdmytriuk.github.io/macremote/uk/ (українська).
 
-DMG публікується у Releases цього репозиторію; стабільне посилання на останню версію:
-https://github.com/vdmytriuk/macremote/releases/latest/download/MacRemote.dmg
+Сторінки збираються з шаблону `src/template.html` і словників `i18n/*.json`:
 
+    node build.mjs
+
+Результат (`index.html`, `uk/index.html`) комітиться в репозиторій, GitHub Pages віддає його як є.
+Встановлення додатка лише через `install.sh` (curl не ставить карантин, тому macOS не показує
+попереджень). DMG у Releases потрібен саме скрипту; посилань на нього на сайті немає навмисно.
 Код застосунку в цьому репозиторії не зберігається.

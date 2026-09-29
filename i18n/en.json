@@ -1,0 +1,92 @@
+{
+  "meta": {
+    "title": "MacRemote — your phone becomes a remote for your Mac",
+    "description": "Any phone or tablet as a trackpad, keyboard, app switcher, live screen and media remote for your Mac. Works on your Wi‑Fi, no accounts, no cloud. Free."
+  },
+  "common": { "copy": "Copy", "copied": "Copied ✓" },
+  "nav": { "features": "Features", "how": "How it works", "install": "Install", "faq": "FAQ", "cta": "Install" },
+  "hero": {
+    "eyebrow": "A remote for your Mac",
+    "h1a": "Your phone", "h1b": "becomes a remote", "h1c": "for your Mac",
+    "lead": "iPhone, Android or a tablet: any device with a browser on your Wi‑Fi. Trackpad, keyboard, apps, live screen and media.",
+    "ctaInstall": "How to install", "ctaFeatures": "See what it does",
+    "meta": "Free · macOS 13 or later · no accounts, no cloud · version 0.1.1",
+    "scroll": "Scroll"
+  },
+  "ui": {
+    "trackpad": "Trackpad", "apps": "Apps", "screen": "Screen", "media": "Media",
+    "left": "Left", "right": "Right", "running": "Running", "allApps": "All apps",
+    "volume": "Volume", "brightness": "Brightness", "typing": "Hello, Mac"
+  },
+  "scene": {
+    "s0": { "eyebrow": "01 · Trackpad", "h2": "The cursor follows your finger", "p": "Smooth acceleration, tap and double tap, two‑finger right click, scrolling, drag by holding. A MacBook trackpad that lives in your pocket." },
+    "s1": { "eyebrow": "02 · Keyboard", "h2": "Your keyboard, your languages", "p": "Type on your phone's own keyboard: the text lands on the Mac as is, whatever layout the Mac has. Arrows, Esc, ⌘ shortcuts and sticky modifiers are always one tap away." },
+    "s2": { "eyebrow": "03 · Apps", "h2": "Switch apps with a tap", "p": "Running apps as tiles with their icons. Tap to switch, hold to hide or quit. A searchable list of every installed app to launch anything." },
+    "s3": { "eyebrow": "04 · Screen", "h2": "Your Mac on your phone", "p": "A live view of the display. Touch to move the cursor to that spot, tap to click, two fingers to scroll. Handy from the couch or another room." },
+    "s4": { "eyebrow": "05 · Media", "h2": "A remote that is always with you", "p": "Play, pause and next track in any player, volume with the native HUD, mute and brightness. No more hunting for the Mac in the dark." }
+  },
+  "demos": {
+    "h2": "Everything is live, everything happens on your Mac",
+    "sub": "Every action on the phone runs on the Mac instantly. Here is what it looks like.",
+    "typed": "Typed from a phone. In English, Ukrainian, any language.",
+    "d0": { "h3": "Trackpad", "p": "The cursor mirrors your finger with acceleration, just like a real trackpad." },
+    "d1": { "h3": "Keyboard", "p": "You type on the phone, the text appears in the active window on the Mac." },
+    "d2": { "h3": "Apps", "p": "Tap a tile on the phone and the right window comes to the front on the Mac." },
+    "d3": { "h3": "Screen", "p": "The Mac display streams to the phone, and a touch becomes a click at that exact point." },
+    "d4": { "h3": "Media", "p": "Volume with the native macOS HUD, playback and brightness." },
+    "d5": { "h3": "No cloud", "p": "Mac and phone talk directly on your network. Access is protected by a token from the QR code." }
+  },
+  "how": {
+    "h2": "Three steps to a remote",
+    "s1": { "h3": "Install on the Mac", "p": "One command in Terminal downloads MacRemote, puts it in Applications and opens it. A phone icon appears in the menu bar." },
+    "s2": { "h3": "Grant permissions", "p": "macOS asks for Accessibility: it is needed to move the cursor and press keys. The Screen tab also needs Screen Recording." },
+    "s3": { "h3": "Scan the QR code", "p": "Menu → “Show QR code…”. Point your phone camera at it, open the link in the browser and add it to the home screen. Done." }
+  },
+  "menu": {
+    "clock": "Tue 14:32", "title": "Mac Remote — MacBook Pro", "clients": "Clients: 1",
+    "qr": "Show QR code…", "copy": "Copy address with token",
+    "ax": "✓ Accessibility granted", "screen": "Grant Screen Recording…",
+    "login": "✓ Launch at login", "quit": "Quit", "scan": "Scan with your camera"
+  },
+  "install": {
+    "h2": "Installation, step by step",
+    "cmd": "curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash",
+    "mac": {
+      "h3": "On the Mac",
+      "p1": "Open Terminal, paste the command and press Enter. It downloads the latest version, puts MacRemote in Applications and opens it. No macOS warnings.",
+      "p2": "Right after launch macOS asks for Accessibility: it is needed to move the cursor and press keys. Turn MacRemote on in the list.",
+      "p3": "A phone icon appears in the menu bar. Optionally enable “Launch at login” in the menu."
+    },
+    "why": {
+      "summary": "Why a command instead of a download",
+      "p1": "macOS quarantines files downloaded by a browser and blocks apps without a paid Apple Developer signature: you get a “Not Opened” dialog that has to be bypassed in System Settings. The command downloads the same disk image without quarantine, so everything opens right away.",
+      "p2": "The script is open: read it at the address in the command. It only downloads the image from GitHub Releases, copies the app to Applications and opens it. Nothing else on your Mac is touched."
+    },
+    "phone": {
+      "h3": "On the phone or tablet",
+      "s1": "Make sure the device is on the same Wi‑Fi network as the Mac.",
+      "s2": "On the Mac: MacRemote menu → “Show QR code…”.",
+      "s3": "Point the camera at the QR code and open the link in the browser (Safari, Chrome).",
+      "s4": "Add the page to the home screen: in Safari “Share → Add to Home Screen”, in Chrome “Add to Home screen”. The remote opens as its own app, without an address bar.",
+      "s5": "The token is stored on the device: no need to scan again."
+    },
+    "req": {
+      "summary": "Requirements",
+      "i1": "macOS 13 Ventura or later, Apple Silicon or Intel.",
+      "i2": "iPhone, iPad, Android phone or tablet with a modern browser.",
+      "i3": "A shared Wi‑Fi network. Guest networks often isolate devices from each other."
+    }
+  },
+  "faq": {
+    "h2": "Questions",
+    "q1": { "q": "The phone can't see the Mac. What now?", "a": "Check that both devices are on the same network and that it is not a guest network. If the Mac firewall is on (System Settings → Network → Firewall), allow incoming connections for MacRemote. Ports 8383 and 8384 are used." },
+    "q2": { "q": "The cursor doesn't move even though everything is connected.", "a": "Accessibility is not granted. Open the MacRemote menu: if it shows “Grant Accessibility…”, click it. After an app update the permission sometimes has to be removed and granted again." },
+    "q3": { "q": "The Screen tab shows a hint instead of the picture.", "a": "Screen Recording is required: MacRemote menu → “Grant Screen Recording…”, turn MacRemote on in the list and relaunch the app." },
+    "q4": { "q": "Does it work with Android?", "a": "Yes. The remote is a web page, so any device with a modern browser works: iPhone, iPad, Android phones and tablets." },
+    "q5": { "q": "Is it safe?", "a": "Only someone with the token from the QR code can control the Mac. Traffic never leaves your local network, there is no server and no accounts. On public networks you don't trust, just quit the app." },
+    "q6": { "q": "How do I uninstall?", "a": "Menu → “Quit”, then drag MacRemote from Applications to the Bin. If you enabled “Launch at login”, turn it off in the menu first. The token and settings live in ~/Library/Application Support/MacRemote." },
+    "q7": { "q": "How much does it cost?", "a": "It is free for now. If a paid version ever appears, the free one is not going anywhere." }
+  },
+  "final": { "h2": "Try it today", "p": "One command in Terminal, and your Mac listens to your phone." },
+  "footer": { "made": "Made in Ukraine", "report": "Report a problem" }
+}

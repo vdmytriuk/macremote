@@ -4,6 +4,11 @@
 #   curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash
 set -euo pipefail
 
+# Повідомлення українською, якщо система українська, інакше англійською.
+UK=0
+case "${LC_ALL:-}${LANG:-}" in uk*) UK=1 ;; esac
+say() { if [ "$UK" = 1 ]; then echo "→ $1"; else echo "→ $2"; fi; }
+
 URL="https://github.com/vdmytriuk/macremote/releases/latest/download/MacRemote.dmg"
 WORK="$(mktemp -d "${TMPDIR:-/tmp}/macremote.XXXXXX")"
 DMG="$WORK/MacRemote.dmg"
@@ -15,7 +20,7 @@ cleanup() {
 }
 trap cleanup EXIT
 
-echo "→ Завантажую MacRemote…"
+say "Завантажую MacRemote…" "Downloading MacRemote…"
 curl -fsSL "$URL" -o "$DMG"
 
 mkdir -p "$MNT"
@@ -42,8 +47,8 @@ fi
 ditto "$MNT/MacRemote.app" "$DEST/MacRemote.app"
 xattr -dr com.apple.quarantine "$DEST/MacRemote.app" 2>/dev/null || true
 
-echo "→ Встановлено: $DEST/MacRemote.app"
+say "Встановлено: $DEST/MacRemote.app" "Installed: $DEST/MacRemote.app"
 if [ -z "${MACREMOTE_NO_OPEN:-}" ]; then
-  echo "→ Відкриваю. Дозвольте Accessibility, коли macOS запитає, потім: меню → «Показати QR-код…»."
+  say "Відкриваю. Дозвольте Accessibility, коли macOS запитає, потім: меню → «Показати QR-код…»." "Opening. Grant Accessibility when macOS asks, then: menu → “Show QR code…”."
   open "$DEST/MacRemote.app"
 fi

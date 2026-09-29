@@ -143,4 +143,27 @@
     }
     qr.appendChild(frag);
   }
+
+  // ---------- Копіювання команди встановлення ----------
+  document.querySelectorAll('[data-copy]').forEach((btn) => {
+    const label = btn.textContent;
+    btn.addEventListener('click', async () => {
+      try { await navigator.clipboard.writeText(btn.dataset.copy); } catch { /* немає доступу до буфера */ }
+      btn.textContent = btn.dataset.copied || label;
+      btn.classList.add('done');
+      setTimeout(() => { btn.textContent = label; btn.classList.remove('done'); }, 1800);
+    });
+  });
+
+  // ---------- Мова: пам'ятаємо вибір, українцям одразу показуємо український варіант ----------
+  const lang = document.body.dataset.lang;
+  const base = document.body.dataset.base || '';
+  document.querySelectorAll('a[hreflang]').forEach((a) => {
+    a.addEventListener('click', () => { try { localStorage.setItem('lang', a.getAttribute('hreflang')); } catch {} });
+  });
+  try {
+    const stored = localStorage.getItem('lang');
+    const wantsUk = (navigator.language || '').toLowerCase().startsWith('uk');
+    if (lang === 'en' && (stored === 'uk' || (!stored && wantsUk))) location.replace(`${base}uk/${location.hash}`);
+  } catch {}
 })();

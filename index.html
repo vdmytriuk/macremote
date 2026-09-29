@@ -1,15 +1,18 @@
 <!doctype html>
-<html lang="uk">
+<html lang="en">
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>MacRemote — телефон стає пультом для Mac</title>
-<meta name="description" content="Будь-який телефон або планшет як трекпад, клавіатура, перемикач програм, живий екран і пульт для Mac. Працює у вашій Wi‑Fi мережі, без акаунтів і хмари. Безкоштовно.">
-<meta property="og:title" content="MacRemote — телефон стає пультом для Mac">
-<meta property="og:description" content="Трекпад, клавіатура, програми, живий екран і медіа з будь-якого пристрою з браузером. Локальна мережа, без хмари. Безкоштовно.">
+<title>MacRemote — your phone becomes a remote for your Mac</title>
+<meta name="description" content="Any phone or tablet as a trackpad, keyboard, app switcher, live screen and media remote for your Mac. Works on your Wi‑Fi, no accounts, no cloud. Free.">
+<meta property="og:title" content="MacRemote — your phone becomes a remote for your Mac">
+<meta property="og:description" content="Any phone or tablet as a trackpad, keyboard, app switcher, live screen and media remote for your Mac. Works on your Wi‑Fi, no accounts, no cloud. Free.">
 <meta property="og:image" content="https://vdmytriuk.github.io/macremote/assets/icon-512.png">
 <meta property="og:type" content="website">
 <meta name="theme-color" content="#050507">
+<link rel="alternate" hreflang="en" href="https://vdmytriuk.github.io/macremote/">
+<link rel="alternate" hreflang="uk" href="https://vdmytriuk.github.io/macremote/uk/">
+<link rel="alternate" hreflang="x-default" href="https://vdmytriuk.github.io/macremote/">
 <link rel="icon" href="assets/favicon.png">
 <link rel="apple-touch-icon" href="assets/icon-128.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
@@ -17,17 +20,20 @@
 <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;800&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="style.css">
 </head>
-<body>
+<body data-lang="en" data-base="">
 
 <header class="nav">
-  <a class="logo" href="#top"><img src="assets/icon-128.png" alt="" width="28" height="28"> MacRemote</a>
-  <nav>
-    <a href="#scene">Можливості</a>
-    <a href="#how">Як працює</a>
-    <a href="#install">Встановлення</a>
-    <a href="#faq">Питання</a>
-    <a class="btn small" href="https://github.com/vdmytriuk/macremote/releases/latest/download/MacRemote.dmg">Завантажити</a>
-  </nav>
+  <div class="nav-inner">
+    <a class="logo" href="#top"><img src="assets/icon-128.png" alt="" width="28" height="28"> MacRemote</a>
+    <nav>
+      <a href="#scene">Features</a>
+      <a href="#how">How it works</a>
+      <a href="#install">Install</a>
+      <a href="#faq">FAQ</a>
+      <a class="lang" href="uk/" hreflang="uk">UA</a>
+      <a class="btn small" href="#install">Install</a>
+    </nav>
+  </div>
 </header>
 
 <main>
@@ -37,14 +43,18 @@
   <div class="aurora" aria-hidden="true"><i></i><i></i><i></i></div>
   <div class="hero-inner">
     <div class="hero-text">
-      <p class="eyebrow reveal" style="--i:0">Пульт для Mac</p>
-      <h1 class="reveal" style="--i:1"><span>Ваш телефон</span> <span>стає пультом</span> <span class="grad">для Mac</span></h1>
-      <p class="lead reveal" style="--i:2">iPhone, Android чи планшет: будь-який пристрій із браузером у вашій Wi‑Fi мережі. Трекпад, клавіатура, програми, живий екран і медіа.</p>
-      <div class="cta reveal" style="--i:3">
-        <a class="btn primary" href="https://github.com/vdmytriuk/macremote/releases/latest/download/MacRemote.dmg">Завантажити для macOS</a>
-        <a class="btn ghost" href="#install">Як встановити</a>
+      <p class="eyebrow reveal" style="--i:0">A remote for your Mac</p>
+      <h1 class="reveal" style="--i:1"><span>Your phone</span> <span>becomes a remote</span> <span class="grad">for your Mac</span></h1>
+      <p class="lead reveal" style="--i:2">iPhone, Android or a tablet: any device with a browser on your Wi‑Fi. Trackpad, keyboard, apps, live screen and media.</p>
+      <div class="cmd reveal" style="--i:3">
+        <code>curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash</code>
+        <button type="button" data-copy="curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash" data-copied="Copied ✓">Copy</button>
       </div>
-      <p class="meta reveal" style="--i:4">Безкоштовно · macOS 13 або новіша · без акаунтів і хмари · версія 0.1</p>
+      <div class="cta reveal" style="--i:4">
+        <a class="btn primary" href="#install">How to install</a>
+        <a class="btn ghost" href="#scene">See what it does</a>
+      </div>
+      <p class="meta reveal" style="--i:5">Free · macOS 13 or later · no accounts, no cloud · version 0.1.1</p>
     </div>
 
     <div class="hero-device" id="heroTilt" aria-hidden="true">
@@ -54,9 +64,9 @@
           <div class="notch"></div>
           <div class="screen">
             <div class="ptop"><span class="dot"></span>MacBook Pro</div>
-            <div class="ppad"><span class="finger"></span>Трекпад</div>
-            <div class="pbar"><span>Лівий</span><span class="k">⌨</span><span>Правий</span></div>
-            <div class="ptabs"><b>Трекпад</b><span>Додатки</span><span>Екран</span><span>Медіа</span></div>
+            <div class="ppad"><span class="finger"></span>Trackpad</div>
+            <div class="pbar"><span>Left</span><span class="k">⌨</span><span>Right</span></div>
+            <div class="ptabs"><b>Trackpad</b><span>Apps</span><span>Screen</span><span>Media</span></div>
           </div>
           <div class="back"><img src="assets/icon-128.png" alt="" width="48" height="48"></div>
         </div>
@@ -64,10 +74,10 @@
       <div class="glow"></div>
     </div>
   </div>
-  <a class="scroll-hint" href="#scene"><span></span>Прокрутіть</a>
+  <a class="scroll-hint" href="#scene"><span></span>Scroll</a>
 </section>
 
-<!-- ===== Scroll scene: телефон обертається, екрани змінюються ===== -->
+<!-- ===== Scroll scene ===== -->
 <section class="scene" id="scene" data-scene style="--segments:5">
   <div class="stage">
     <div class="stage-device" aria-hidden="true">
@@ -77,33 +87,33 @@
 
         <div class="screen seg" data-seg="0">
           <div class="ptop"><span class="dot"></span>MacBook Pro</div>
-          <div class="ppad"><span class="finger drift"></span>Трекпад</div>
-          <div class="pbar"><span>Лівий</span><span class="k">⌨</span><span>Правий</span></div>
-          <div class="ptabs"><b>Трекпад</b><span>Додатки</span><span>Екран</span><span>Медіа</span></div>
+          <div class="ppad"><span class="finger drift"></span>Trackpad</div>
+          <div class="pbar"><span>Left</span><span class="k">⌨</span><span>Right</span></div>
+          <div class="ptabs"><b>Trackpad</b><span>Apps</span><span>Screen</span><span>Media</span></div>
         </div>
 
         <div class="screen seg" data-seg="1">
           <div class="ptop"><span class="dot"></span>MacBook Pro</div>
-          <div class="ppad small">Трекпад</div>
+          <div class="ppad small">Trackpad</div>
           <div class="pkbd">
-            <div class="typing">Привіт, Mac<i class="caret"></i></div>
+            <div class="typing">Hello, Mac<i class="caret"></i></div>
             <div class="krow"><span>esc</span><span>tab</span><span class="on">⌘</span><span>⌥</span><span>⌃</span><span>⇧</span><span>del</span></div>
             <div class="krow"><span>home</span><span>pgup</span><span>↑</span><span>pgdn</span><span>end</span><span>⌫</span></div>
             <div class="krow"><span>⌘tab</span><span>←</span><span>↓</span><span>→</span><span class="wide">space</span><span>↩</span></div>
           </div>
-          <div class="ptabs"><b>Трекпад</b><span>Додатки</span><span>Екран</span><span>Медіа</span></div>
+          <div class="ptabs"><b>Trackpad</b><span>Apps</span><span>Screen</span><span>Media</span></div>
         </div>
 
         <div class="screen seg" data-seg="2">
           <div class="ptop"><span class="dot"></span>MacBook Pro</div>
-          <div class="plabel">Запущені</div>
+          <div class="plabel">Running</div>
           <div class="pgrid">
             <i style="--c:#ff9f0a"></i><i style="--c:#30d158"></i><i class="on" style="--c:#0a84ff"></i><i style="--c:#bf5af2"></i>
             <i style="--c:#ff453a"></i><i style="--c:#64d2ff"></i><i style="--c:#ffd60a"></i><i style="--c:#8e8e93"></i>
           </div>
-          <div class="plabel">Усі програми</div>
+          <div class="plabel">All apps</div>
           <div class="plist"><span></span><span></span><span></span><span></span></div>
-          <div class="ptabs"><span>Трекпад</span><b>Додатки</b><span>Екран</span><span>Медіа</span></div>
+          <div class="ptabs"><span>Trackpad</span><b>Apps</b><span>Screen</span><span>Media</span></div>
         </div>
 
         <div class="screen seg" data-seg="3">
@@ -115,61 +125,41 @@
               <div class="scan"></div>
             </div>
           </div>
-          <div class="pbar"><span>Лівий</span><span class="k">⌨</span><span>Правий</span></div>
-          <div class="ptabs"><span>Трекпад</span><span>Додатки</span><b>Екран</b><span>Медіа</span></div>
+          <div class="pbar"><span>Left</span><span class="k">⌨</span><span>Right</span></div>
+          <div class="ptabs"><span>Trackpad</span><span>Apps</span><b>Screen</b><span>Media</span></div>
         </div>
 
         <div class="screen seg" data-seg="4">
           <div class="ptop"><span class="dot"></span>MacBook Pro</div>
           <div class="pmedia">
             <div class="row big"><span>⏮</span><span class="play">⏯</span><span>⏭</span></div>
-            <div class="plabel">Гучність</div>
+            <div class="plabel">Volume</div>
             <div class="row"><span>−</span><span>🔇</span><span>+</span></div>
-            <div class="plabel">Яскравість</div>
+            <div class="plabel">Brightness</div>
             <div class="row"><span>☀︎−</span><span>☀︎+</span></div>
           </div>
-          <div class="ptabs"><span>Трекпад</span><span>Додатки</span><span>Екран</span><b>Медіа</b></div>
+          <div class="ptabs"><span>Trackpad</span><span>Apps</span><span>Screen</span><b>Media</b></div>
         </div>
       </div>
       <div class="glow"></div>
     </div>
 
     <div class="captions">
-      <div class="caption" data-seg="0">
-        <p class="eyebrow">01 · Трекпад</p>
-        <h2>Курсор слухається пальця</h2>
-        <p>Плавне прискорення, тап і подвійний тап, правий клік двома пальцями, скрол, перетягування утриманням. Як трекпад MacBook, тільки в кишені.</p>
-      </div>
-      <div class="caption" data-seg="1">
-        <p class="eyebrow">02 · Клавіатура</p>
-        <h2>Ваша клавіатура, ваші мови</h2>
-        <p>Друкуйте рідною клавіатурою телефона: текст іде на Mac як є, розкладка не має значення. Стрілки, Esc, ⌘-комбінації та липкі модифікатори завжди поруч.</p>
-      </div>
-      <div class="caption" data-seg="2">
-        <p class="eyebrow">03 · Програми</p>
-        <h2>Перемикайтесь одним дотиком</h2>
-        <p>Запущені програми плиткою з іконками. Тап перемикає, утримання ховає або закриває. Список усіх програм із пошуком, щоб запустити будь-що.</p>
-      </div>
-      <div class="caption" data-seg="3">
-        <p class="eyebrow">04 · Екран</p>
-        <h2>Mac на екрані телефона</h2>
-        <p>Жива картинка дисплея. Дотик переносить курсор у цю точку, тап клікає, два пальці скролять. Зручно з дивана або з іншої кімнати.</p>
-      </div>
-      <div class="caption" data-seg="4">
-        <p class="eyebrow">05 · Медіа</p>
-        <h2>Пульт, який завжди з вами</h2>
-        <p>Play, Pause, наступний трек у будь-якому плеєрі, гучність із рідним HUD, звук і яскравість. Без пошуку Mac у темряві.</p>
-      </div>
+      <div class="caption" data-seg="0"><p class="eyebrow">01 · Trackpad</p><h2>The cursor follows your finger</h2><p>Smooth acceleration, tap and double tap, two‑finger right click, scrolling, drag by holding. A MacBook trackpad that lives in your pocket.</p></div>
+      <div class="caption" data-seg="1"><p class="eyebrow">02 · Keyboard</p><h2>Your keyboard, your languages</h2><p>Type on your phone's own keyboard: the text lands on the Mac as is, whatever layout the Mac has. Arrows, Esc, ⌘ shortcuts and sticky modifiers are always one tap away.</p></div>
+      <div class="caption" data-seg="2"><p class="eyebrow">03 · Apps</p><h2>Switch apps with a tap</h2><p>Running apps as tiles with their icons. Tap to switch, hold to hide or quit. A searchable list of every installed app to launch anything.</p></div>
+      <div class="caption" data-seg="3"><p class="eyebrow">04 · Screen</p><h2>Your Mac on your phone</h2><p>A live view of the display. Touch to move the cursor to that spot, tap to click, two fingers to scroll. Handy from the couch or another room.</p></div>
+      <div class="caption" data-seg="4"><p class="eyebrow">05 · Media</p><h2>A remote that is always with you</h2><p>Play, pause and next track in any player, volume with the native HUD, mute and brightness. No more hunting for the Mac in the dark.</p></div>
     </div>
 
     <div class="progress" aria-hidden="true"><i data-seg="0"></i><i data-seg="1"></i><i data-seg="2"></i><i data-seg="3"></i><i data-seg="4"></i></div>
   </div>
 </section>
 
-<!-- ===== Демо ===== -->
+<!-- ===== Demos ===== -->
 <section class="demos" id="demos">
-  <h2 class="reveal">Усе живе, усе на вашому Mac</h2>
-  <p class="sub reveal" style="--i:1">Кожна дія з телефона миттєво виконується на Mac. Нижче так, як це виглядає.</p>
+  <h2 class="reveal">Everything is live, everything happens on your Mac</h2>
+  <p class="sub reveal" style="--i:1">Every action on the phone runs on the Mac instantly. Here is what it looks like.</p>
   <div class="grid">
 
     <article class="demo reveal" style="--i:0">
@@ -181,19 +171,19 @@
         </div>
         <div class="minipad"><span class="finger drift2"></span></div>
       </div>
-      <h3>Трекпад</h3>
-      <p>Курсор повторює рух пальця з прискоренням, як на справжньому трекпаді.</p>
+      <h3>Trackpad</h3>
+      <p>The cursor mirrors your finger with acceleration, just like a real trackpad.</p>
     </article>
 
     <article class="demo reveal" style="--i:1">
       <div class="art">
         <div class="macwin doc">
           <div class="bar"><i></i><i></i><i></i></div>
-          <div class="text"><span class="typed" data-text="Це надруковано з телефона. Українською, англійською, будь-якою."></span><i class="caret"></i></div>
+          <div class="text"><span class="typed" data-text="Typed from a phone. In English, Ukrainian, any language."></span><i class="caret"></i></div>
         </div>
       </div>
-      <h3>Клавіатура</h3>
-      <p>Друкуєте на телефоні, текст з'являється в активному вікні Mac.</p>
+      <h3>Keyboard</h3>
+      <p>You type on the phone, the text appears in the active window on the Mac.</p>
     </article>
 
     <article class="demo reveal" style="--i:2">
@@ -205,22 +195,18 @@
           <i style="--c:#ff9f0a"></i><i style="--c:#30d158"></i><i style="--c:#0a84ff" class="on"></i><i style="--c:#bf5af2"></i>
         </div>
       </div>
-      <h3>Програми</h3>
-      <p>Тап по плитці на телефоні, і на Mac активується потрібне вікно.</p>
+      <h3>Apps</h3>
+      <p>Tap a tile on the phone and the right window comes to the front on the Mac.</p>
     </article>
 
     <article class="demo reveal" style="--i:3">
       <div class="art">
-        <div class="macscreen">
-          <div class="win w1"></div><div class="win w2"></div>
-        </div>
+        <div class="macscreen"><div class="win w1"></div><div class="win w2"></div></div>
         <div class="beam"></div>
-        <div class="miniphone">
-          <div class="mini"><div class="win w1"></div><div class="win w2"></div><div class="tap"></div></div>
-        </div>
+        <div class="miniphone"><div class="mini"><div class="win w1"></div><div class="win w2"></div><div class="tap"></div></div></div>
       </div>
-      <h3>Екран</h3>
-      <p>Дисплей Mac транслюється на телефон, а дотик стає кліком у тій самій точці.</p>
+      <h3>Screen</h3>
+      <p>The Mac display streams to the phone, and a touch becomes a click at that exact point.</p>
     </article>
 
     <article class="demo reveal" style="--i:4">
@@ -231,8 +217,8 @@
         </div>
         <div class="playbtn">⏯</div>
       </div>
-      <h3>Медіа</h3>
-      <p>Гучність із рідним HUD macOS, плеєр і яскравість.</p>
+      <h3>Media</h3>
+      <p>Volume with the native macOS HUD, playback and brightness.</p>
     </article>
 
     <article class="demo reveal" style="--i:5">
@@ -244,91 +230,75 @@
           <div class="cloud">☁︎<b></b></div>
         </div>
       </div>
-      <h3>Без хмари</h3>
-      <p>Mac і телефон спілкуються напряму у вашій мережі. Доступ захищено токеном із QR-коду.</p>
+      <h3>No cloud</h3>
+      <p>Mac and phone talk directly on your network. Access is protected by a token from the QR code.</p>
     </article>
 
   </div>
 </section>
 
-<!-- ===== Як працює ===== -->
+<!-- ===== How it works ===== -->
 <section class="how" id="how">
-  <h2 class="reveal">Три кроки до пульта</h2>
+  <h2 class="reveal">Three steps to a remote</h2>
   <ol class="steps">
-    <li class="reveal" style="--i:0">
-      <span class="num">1</span>
-      <h3>Встановіть на Mac</h3>
-      <p>Завантажте DMG, перетягніть MacRemote в Applications і відкрийте. У menu bar з'явиться іконка телефону.</p>
-    </li>
-    <li class="reveal" style="--i:1">
-      <span class="num">2</span>
-      <h3>Дайте дозволи</h3>
-      <p>macOS запитає дозвіл Accessibility: він потрібен, щоб рухати курсор і натискати клавіші. Для вкладки «Екран» ще Screen Recording.</p>
-    </li>
-    <li class="reveal" style="--i:2">
-      <span class="num">3</span>
-      <h3>Відскануйте QR</h3>
-      <p>Меню → «Показати QR-код…». Наведіть камеру телефона, відкрийте посилання в браузері й додайте на головний екран. Готово.</p>
-    </li>
+    <li class="reveal" style="--i:0"><span class="num">1</span><h3>Install on the Mac</h3><p>One command in Terminal downloads MacRemote, puts it in Applications and opens it. A phone icon appears in the menu bar.</p></li>
+    <li class="reveal" style="--i:1"><span class="num">2</span><h3>Grant permissions</h3><p>macOS asks for Accessibility: it is needed to move the cursor and press keys. The Screen tab also needs Screen Recording.</p></li>
+    <li class="reveal" style="--i:2"><span class="num">3</span><h3>Scan the QR code</h3><p>Menu → “Show QR code…”. Point your phone camera at it, open the link in the browser and add it to the home screen. Done.</p></li>
   </ol>
   <div class="menu-demo reveal" style="--i:1" aria-hidden="true">
-    <div class="menubar"><span class="mb-icon">▮</span><span>Вт 14:32</span></div>
+    <div class="menubar"><span class="mb-icon">▮</span><span>Tue 14:32</span></div>
     <div class="menu">
       <div class="mi dim">Mac Remote — MacBook Pro</div>
-      <div class="mi dim">Клієнтів: 1</div>
+      <div class="mi dim">Clients: 1</div>
       <hr>
       <div class="mi dim">http://192.168.1.10:8383</div>
-      <div class="mi hl">Показати QR-код…</div>
-      <div class="mi">Копіювати адресу з токеном</div>
+      <div class="mi hl">Show QR code…</div>
+      <div class="mi">Copy address with token</div>
       <hr>
-      <div class="mi dim">✓ Дозвіл Accessibility надано</div>
-      <div class="mi">Надати дозвіл Screen Recording…</div>
-      <div class="mi">✓ Запускати при вході</div>
+      <div class="mi dim">✓ Accessibility granted</div>
+      <div class="mi">Grant Screen Recording…</div>
+      <div class="mi">✓ Launch at login</div>
       <hr>
-      <div class="mi">Вийти</div>
+      <div class="mi">Quit</div>
     </div>
-    <div class="qr"><div class="qrgrid"></div><span>Скануйте камерою</span></div>
+    <div class="qr"><div class="qrgrid"></div><span>Scan with your camera</span></div>
   </div>
 </section>
 
-<!-- ===== Встановлення ===== -->
+<!-- ===== Install ===== -->
 <section class="install" id="install">
-  <h2 class="reveal">Встановлення крок за кроком</h2>
+  <h2 class="reveal">Installation, step by step</h2>
   <div class="two-col">
     <div class="reveal" style="--i:0">
-      <h3>На Mac</h3>
-      <p><strong>Найпростіше: одна команда в Terminal.</strong> Вона завантажує останню версію, кладе MacRemote в Applications і відкриває його. Попереджень macOS при цьому не буде.</p>
-      <div class="term"><pre><code>curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash</code></pre></div>
-      <p>Або через Homebrew:</p>
-      <div class="term"><pre><code>brew install --cask --no-quarantine vdmytriuk/tap/macremote</code></pre></div>
-      <p>Далі дозвольте Accessibility у діалозі, що з'явиться: він потрібен, щоб рухати курсор і натискати клавіші. За бажанням увімкніть у меню «Запускати при вході».</p>
+      <h3>On the Mac</h3>
+      <p>Open Terminal, paste the command and press Enter. It downloads the latest version, puts MacRemote in Applications and opens it. No macOS warnings.</p>
+      <div class="cmd">
+        <code>curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash</code>
+        <button type="button" data-copy="curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash" data-copied="Copied ✓">Copy</button>
+      </div>
+      <p>Right after launch macOS asks for Accessibility: it is needed to move the cursor and press keys. Turn MacRemote on in the list.</p>
+      <p>A phone icon appears in the menu bar. Optionally enable “Launch at login” in the menu.</p>
       <details>
-        <summary>Встановлення з DMG вручну і попередження «Not Opened»</summary>
-        <ol>
-          <li>Завантажте <a href="https://github.com/vdmytriuk/macremote/releases/latest/download/MacRemote.dmg">MacRemote.dmg</a>.</li>
-          <li>При відкритті macOS покаже «“MacRemote.dmg” Not Opened. Apple could not verify…». Натисніть <strong>Done</strong> (не Move to Bin).</li>
-          <li>Відкрийте <strong>System Settings → Privacy &amp; Security</strong>, прокрутіть униз до рядка про MacRemote.dmg і натисніть <strong>Open Anyway</strong>.</li>
-          <li>Перетягніть MacRemote у теку Applications і відкрийте. Якщо попередження з'явиться знову для самого додатка, повторіть Open Anyway. Це разова дія.</li>
-        </ol>
-        <p>Так відбувається, бо додаток підписаний без платного акаунта Apple Developer і macOS не може підтвердити розробника. Код працює тільки у вашій локальній мережі і нічого не надсилає в інтернет. Альтернатива кнопці Open Anyway у Terminal, коли файл уже в Downloads:</p>
-        <pre><code>xattr -d com.apple.quarantine ~/Downloads/MacRemote.dmg</code></pre>
+        <summary>Why a command instead of a download</summary>
+        <p>macOS quarantines files downloaded by a browser and blocks apps without a paid Apple Developer signature: you get a “Not Opened” dialog that has to be bypassed in System Settings. The command downloads the same disk image without quarantine, so everything opens right away.</p>
+        <p>The script is open: read it at the address in the command. It only downloads the image from GitHub Releases, copies the app to Applications and opens it. Nothing else on your Mac is touched.</p>
       </details>
     </div>
     <div class="reveal" style="--i:1">
-      <h3>На телефоні або планшеті</h3>
+      <h3>On the phone or tablet</h3>
       <ol>
-        <li>Переконайтесь, що пристрій у тій самій Wi‑Fi мережі, що й Mac.</li>
-        <li>На Mac: меню MacRemote → «Показати QR-код…».</li>
-        <li>Наведіть камеру на QR і відкрийте посилання в браузері (Safari, Chrome).</li>
-        <li>Додайте сторінку на головний екран: у Safari «Поділитися → На Початковий екран», у Chrome «Додати на головний екран». Пульт відкриватиметься як окремий додаток, без адресного рядка.</li>
-        <li>Токен зберігається на пристрої: повторно сканувати не треба.</li>
+        <li>Make sure the device is on the same Wi‑Fi network as the Mac.</li>
+        <li>On the Mac: MacRemote menu → “Show QR code…”.</li>
+        <li>Point the camera at the QR code and open the link in the browser (Safari, Chrome).</li>
+        <li>Add the page to the home screen: in Safari “Share → Add to Home Screen”, in Chrome “Add to Home screen”. The remote opens as its own app, without an address bar.</li>
+        <li>The token is stored on the device: no need to scan again.</li>
       </ol>
       <details>
-        <summary>Вимоги</summary>
+        <summary>Requirements</summary>
         <ul>
-          <li>macOS 13 Ventura або новіша, Apple Silicon або Intel.</li>
-          <li>iPhone, iPad, Android-телефон чи планшет із сучасним браузером.</li>
-          <li>Спільна Wi‑Fi мережа. Гостьові мережі часто ізолюють пристрої одне від одного.</li>
+          <li>macOS 13 Ventura or later, Apple Silicon or Intel.</li>
+          <li>iPhone, iPad, Android phone or tablet with a modern browser.</li>
+          <li>A shared Wi‑Fi network. Guest networks often isolate devices from each other.</li>
         </ul>
       </details>
     </div>
@@ -337,50 +307,32 @@
 
 <!-- ===== FAQ ===== -->
 <section class="faq" id="faq">
-  <h2 class="reveal">Питання</h2>
-  <details class="reveal" style="--i:0">
-    <summary>Телефон не бачить Mac. Що робити?</summary>
-    <p>Перевірте, що обидва пристрої в одній мережі і що це не гостьова мережа. Якщо на Mac увімкнений фаєрвол (System Settings → Network → Firewall), дозвольте MacRemote вхідні з'єднання. Використовуються порти 8383 і 8384.</p>
-  </details>
-  <details class="reveal" style="--i:1">
-    <summary>Курсор не рухається, хоча все підключено.</summary>
-    <p>Не надано дозвіл Accessibility. Відкрийте меню MacRemote: якщо там є пункт «Надати дозвіл Accessibility…», натисніть його. Після оновлення додатка дозвіл іноді доводиться зняти й дати знову.</p>
-  </details>
-  <details class="reveal" style="--i:2">
-    <summary>Вкладка «Екран» показує підказку замість картинки.</summary>
-    <p>Потрібен дозвіл Screen Recording: меню MacRemote → «Надати дозвіл Screen Recording…», увімкніть MacRemote у списку і перезапустіть додаток.</p>
-  </details>
-  <details class="reveal" style="--i:3">
-    <summary>Чи працює з Android?</summary>
-    <p>Так. Пульт це веб-сторінка, тому підходить будь-який пристрій із сучасним браузером: iPhone, iPad, Android-телефони й планшети.</p>
-  </details>
-  <details class="reveal" style="--i:4">
-    <summary>Це безпечно?</summary>
-    <p>Керувати Mac може лише той, у кого є токен із QR-коду. Трафік не виходить за межі вашої локальної мережі, сервера й акаунтів немає. У публічних мережах, яким ви не довіряєте, додаток краще закрити.</p>
-  </details>
-  <details class="reveal" style="--i:5">
-    <summary>Як видалити?</summary>
-    <p>Меню → «Вийти», перетягніть MacRemote з Applications у кошик. Якщо вмикали «Запускати при вході», вимкніть це в меню перед видаленням. Токен і налаштування лежать у <code>~/Library/Application Support/MacRemote</code>.</p>
-  </details>
-  <details class="reveal" style="--i:6">
-    <summary>Скільки це коштує?</summary>
-    <p>Зараз безкоштовно. Якщо з'явиться платна версія, безкоштовна ніде не дінеться.</p>
-  </details>
+  <h2 class="reveal">Questions</h2>
+  <details class="reveal" style="--i:0"><summary>The phone can't see the Mac. What now?</summary><p>Check that both devices are on the same network and that it is not a guest network. If the Mac firewall is on (System Settings → Network → Firewall), allow incoming connections for MacRemote. Ports 8383 and 8384 are used.</p></details>
+  <details class="reveal" style="--i:1"><summary>The cursor doesn't move even though everything is connected.</summary><p>Accessibility is not granted. Open the MacRemote menu: if it shows “Grant Accessibility…”, click it. After an app update the permission sometimes has to be removed and granted again.</p></details>
+  <details class="reveal" style="--i:2"><summary>The Screen tab shows a hint instead of the picture.</summary><p>Screen Recording is required: MacRemote menu → “Grant Screen Recording…”, turn MacRemote on in the list and relaunch the app.</p></details>
+  <details class="reveal" style="--i:3"><summary>Does it work with Android?</summary><p>Yes. The remote is a web page, so any device with a modern browser works: iPhone, iPad, Android phones and tablets.</p></details>
+  <details class="reveal" style="--i:4"><summary>Is it safe?</summary><p>Only someone with the token from the QR code can control the Mac. Traffic never leaves your local network, there is no server and no accounts. On public networks you don't trust, just quit the app.</p></details>
+  <details class="reveal" style="--i:5"><summary>How do I uninstall?</summary><p>Menu → “Quit”, then drag MacRemote from Applications to the Bin. If you enabled “Launch at login”, turn it off in the menu first. The token and settings live in ~/Library/Application Support/MacRemote.</p></details>
+  <details class="reveal" style="--i:6"><summary>How much does it cost?</summary><p>It is free for now. If a paid version ever appears, the free one is not going anywhere.</p></details>
 </section>
 
 <section class="final">
   <div class="final-inner reveal">
-    <h2>Спробуйте вже сьогодні</h2>
-    <p>Одна хвилина на встановлення, і Mac слухається вашого телефона.</p>
-    <a class="btn primary big" href="https://github.com/vdmytriuk/macremote/releases/latest/download/MacRemote.dmg">Завантажити для macOS</a>
+    <h2>Try it today</h2>
+    <p>One command in Terminal, and your Mac listens to your phone.</p>
+    <div class="cmd center">
+      <code>curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash</code>
+      <button type="button" data-copy="curl -fsSL https://vdmytriuk.github.io/macremote/install.sh | bash" data-copied="Copied ✓">Copy</button>
+    </div>
   </div>
 </section>
 
 </main>
 
 <footer>
-  <p><img src="assets/icon-128.png" alt="" width="20" height="20"> MacRemote · Зроблено в Україні</p>
-  <p><a href="https://github.com/vdmytriuk/macremote/releases">Версії та зміни</a> · <a href="https://github.com/vdmytriuk/macremote/issues">Повідомити про проблему</a></p>
+  <p><img src="assets/icon-128.png" alt="" width="20" height="20"> MacRemote · Made in Ukraine</p>
+  <p><a href="uk/" hreflang="uk">Українською</a> · <a href="https://github.com/vdmytriuk/macremote/issues">Report a problem</a></p>
 </footer>
 
 <script src="site.js"></script>
