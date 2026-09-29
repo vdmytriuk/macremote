@@ -7,6 +7,8 @@
 
   // ---------- Поява блоків при прокрутці ----------
   const reveals = document.querySelectorAll('.reveal, .demo');
+  // Те, що над згином, показуємо одразу: анімація йде через CSS-переходи зі своїми затримками.
+  document.querySelectorAll('.hero .reveal').forEach((el) => el.classList.add('in'));
   if (reduced) {
     reveals.forEach((el) => el.classList.add('in', 'play'));
   } else {
