@@ -1,0 +1,154 @@
+:root {
+  --bg: #0b0b0d;
+  --bg2: #141416;
+  --panel: #1c1c1e;
+  --btn: #2c2c2e;
+  --accent: #0a84ff;
+  --accent-2: #5ac8fa;
+  --text: #f2f2f7;
+  --muted: #9a9aa3;
+  --ok: #30d158;
+  --radius: 16px;
+  --max: 1080px;
+}
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; }
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font: 16px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Segoe UI", Roboto, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: var(--accent-2); text-decoration: none; }
+a:hover { text-decoration: underline; }
+h1, h2, h3 { margin: 0; letter-spacing: -.01em; }
+h2 { font-size: clamp(26px, 3.4vw, 36px); margin-bottom: 28px; }
+h3 { font-size: 18px; margin-bottom: 8px; }
+p { margin: 0 0 12px; }
+code { background: var(--panel); padding: 2px 6px; border-radius: 6px; font-size: .92em; }
+pre { background: var(--panel); padding: 12px 14px; border-radius: 10px; overflow-x: auto; }
+pre code { background: transparent; padding: 0; }
+main > section, footer { max-width: var(--max); margin: 0 auto; padding: 72px 20px; }
+
+/* Навігація */
+.nav {
+  position: sticky; top: 0; z-index: 10;
+  display: flex; align-items: center; justify-content: space-between; gap: 16px;
+  max-width: var(--max); margin: 0 auto; padding: 14px 20px;
+  background: rgba(11, 11, 13, .85); backdrop-filter: saturate(160%) blur(12px);
+}
+.logo { display: flex; align-items: center; gap: 10px; color: var(--text); font-weight: 600; font-size: 17px; }
+.logo img { border-radius: 7px; }
+.nav nav { display: flex; align-items: center; gap: 20px; }
+.nav nav a { color: var(--muted); }
+.nav nav a:hover { color: var(--text); text-decoration: none; }
+
+/* Кнопки */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  height: 48px; padding: 0 22px; border-radius: 12px;
+  background: var(--btn); color: var(--text) !important; font-weight: 600; text-decoration: none !important;
+  transition: transform .12s, background .12s;
+}
+.btn:hover { transform: translateY(-1px); background: #3a3a3d; }
+.btn.primary { background: var(--accent); }
+.btn.primary:hover { background: #2a94ff; }
+.btn.ghost { background: transparent; box-shadow: inset 0 0 0 1px #3a3a3d; }
+.btn.small { height: 34px; padding: 0 14px; font-size: 14px; background: var(--accent); }
+
+/* Hero */
+.hero { display: grid; grid-template-columns: 1.1fr 1fr; gap: 40px; align-items: center; padding-top: 56px; }
+.eyebrow { color: var(--accent-2); font-weight: 600; text-transform: uppercase; letter-spacing: .08em; font-size: 13px; }
+.hero h1 { font-size: clamp(36px, 5.2vw, 58px); line-height: 1.05; margin-bottom: 18px; }
+.lead { font-size: 19px; color: #d1d1d6; max-width: 34em; }
+.cta { display: flex; gap: 12px; flex-wrap: wrap; margin: 24px 0 14px; }
+.meta { color: var(--muted); font-size: 14px; }
+
+/* Макети телефонів */
+.hero-art { display: flex; gap: 18px; justify-content: center; align-items: flex-end; }
+.phone {
+  width: 170px; height: 350px; padding: 8px; border-radius: 30px;
+  background: #050506; box-shadow: 0 0 0 2px #2a2a2d, 0 30px 60px rgba(0, 0, 0, .6);
+  flex: none;
+}
+.phone:nth-child(2) { transform: translateY(-22px); }
+.screen {
+  height: 100%; border-radius: 22px; background: #111; overflow: hidden;
+  display: flex; flex-direction: column; font-size: 9px; color: var(--text);
+}
+.ptop { display: flex; align-items: center; gap: 5px; padding: 12px 10px 6px; color: var(--muted); }
+.dot { width: 6px; height: 6px; border-radius: 50%; background: var(--ok); }
+.ppad { flex: 1; margin: 0 8px; border-radius: 10px; background: var(--panel); display: flex; align-items: center; justify-content: center; color: var(--muted); font-size: 11px; }
+.pbar { display: flex; gap: 4px; padding: 6px 8px; }
+.pbar span { flex: 1; height: 24px; border-radius: 7px; background: var(--btn); display: flex; align-items: center; justify-content: center; }
+.pbar .k { flex: 0 0 32px; font-size: 12px; }
+.ptabs { display: flex; border-top: 1px solid var(--btn); margin-top: auto; }
+.ptabs span, .ptabs b { flex: 1; text-align: center; padding: 9px 0; color: var(--muted); font-weight: 400; font-size: 8px; }
+.ptabs b { color: var(--accent); }
+.plabel { padding: 6px 10px 4px; color: var(--muted); font-size: 7px; text-transform: uppercase; letter-spacing: .05em; }
+.pgrid { display: grid; grid-template-columns: repeat(4, 1fr); gap: 5px; padding: 0 8px; }
+.pgrid i { display: block; height: 34px; border-radius: 8px; background: var(--panel); position: relative; }
+.pgrid i::before { content: ""; position: absolute; left: 50%; top: 6px; width: 16px; height: 16px; margin-left: -8px; border-radius: 4px; background: var(--c); }
+.pgrid i::after { content: ""; position: absolute; left: 20%; right: 20%; bottom: 5px; height: 3px; border-radius: 2px; background: #3a3a3d; }
+.pgrid i.on { box-shadow: inset 0 0 0 1.5px var(--accent); }
+.plist { display: flex; flex-direction: column; gap: 4px; padding: 0 8px; }
+.plist span { height: 20px; border-radius: 6px; background: var(--panel); }
+.pmedia { flex: 1; display: flex; flex-direction: column; justify-content: center; gap: 6px; padding: 0 8px; }
+.pmedia .row { display: flex; gap: 5px; }
+.pmedia .row span { flex: 1; height: 28px; border-radius: 8px; background: var(--btn); display: flex; align-items: center; justify-content: center; font-size: 12px; }
+.pmedia .row.big span { height: 40px; font-size: 16px; }
+.pmedia .row.big .play { flex: 1.6; background: var(--accent); }
+
+/* Можливості */
+.cards { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.cards article { background: var(--bg2); border: 1px solid #1f1f22; border-radius: var(--radius); padding: 22px; }
+.cards p { color: #c7c7cc; margin: 0; }
+
+/* Кроки */
+.how { display: grid; grid-template-columns: 1.2fr .8fr; gap: 40px; align-items: center; }
+.how h2 { grid-column: 1 / -1; }
+.steps { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 22px; }
+.steps li { display: grid; grid-template-columns: 40px 1fr; gap: 14px; }
+.steps h3 { grid-column: 2; }
+.steps p { grid-column: 2; color: #c7c7cc; margin: 0; }
+.num { grid-row: 1 / span 2; width: 40px; height: 40px; border-radius: 50%; background: var(--accent); display: flex; align-items: center; justify-content: center; font-weight: 700; }
+
+.menu-demo { justify-self: center; font-size: 13px; }
+.menubar { display: flex; justify-content: flex-end; gap: 14px; width: 300px; padding: 6px 12px; border-radius: 8px 8px 0 0; background: #2b2b2e; color: #ddd; }
+.mb-icon { color: var(--accent-2); }
+.menu { width: 260px; margin-left: 40px; padding: 6px; border-radius: 10px; background: rgba(44, 44, 46, .96); box-shadow: 0 16px 40px rgba(0, 0, 0, .6); }
+.mi { padding: 5px 10px; border-radius: 6px; }
+.mi:not(.dim):hover { background: var(--accent); }
+.mi.dim { color: var(--muted); }
+.menu hr { border: 0; border-top: 1px solid #454548; margin: 5px 8px; }
+
+/* Встановлення */
+.two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.install ol, .install ul { padding-left: 22px; color: #d1d1d6; }
+.install li { margin-bottom: 10px; }
+details { background: var(--bg2); border: 1px solid #1f1f22; border-radius: 12px; padding: 12px 16px; margin-top: 12px; }
+summary { cursor: pointer; font-weight: 600; }
+details p, details ul { margin-top: 10px; color: #d1d1d6; }
+
+/* FAQ */
+.faq details { margin-top: 10px; }
+
+footer { color: var(--muted); font-size: 14px; border-top: 1px solid #1f1f22; padding-top: 28px; padding-bottom: 48px; }
+footer p { display: flex; align-items: center; gap: 8px; }
+footer img { border-radius: 5px; }
+
+@media (max-width: 900px) {
+  .hero, .how, .two-col { grid-template-columns: 1fr; }
+  .cards { grid-template-columns: 1fr 1fr; }
+  .hero-art { margin-top: 20px; }
+  .phone:nth-child(3) { display: none; }
+  .menu-demo { justify-self: start; }
+}
+@media (max-width: 600px) {
+  .nav nav a:not(.btn) { display: none; }
+  .cards { grid-template-columns: 1fr; }
+  .phone:nth-child(2) { transform: none; }
+  .phone { width: 150px; height: 310px; }
+  main > section, footer { padding: 52px 16px; }
+}
