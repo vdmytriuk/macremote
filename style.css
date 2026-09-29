@@ -15,7 +15,7 @@
   --ease: cubic-bezier(.2, .7, .2, 1);
 }
 * { box-sizing: border-box; }
-html { scroll-behavior: smooth; }
+html { scroll-behavior: smooth; overflow-x: hidden; overflow-x: clip; }
 body {
   margin: 0;
   background: var(--bg);
@@ -23,6 +23,7 @@ body {
   font: 17px/1.55 -apple-system, BlinkMacSystemFont, "SF Pro Text", "Inter", "Segoe UI", Roboto, sans-serif;
   -webkit-font-smoothing: antialiased;
   overflow-x: hidden;
+  overflow-x: clip;
 }
 a { color: var(--accent-2); text-decoration: none; }
 a:hover { text-decoration: underline; }
@@ -151,7 +152,7 @@ main > section, footer { max-width: var(--max); margin: 0 auto; padding: 96px 24
 
 /* ---------- Сцена з прокруткою ---------- */
 .scene { position: relative; height: calc(var(--segments) * 100vh + 60vh); max-width: none; padding: 0; }
-.stage { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: var(--max); margin: 0 auto; padding: 0 24px; }
+.stage { position: sticky; top: 0; height: 100vh; display: grid; grid-template-columns: 1fr 1fr; align-items: center; max-width: var(--max); margin: 0 auto; padding: 0 24px; overflow: hidden; }
 .stage-device { position: relative; display: flex; justify-content: center; perspective: 1400px; }
 .stage-device .glow { width: 380px; height: 380px; margin: -190px 0 0 -190px; }
 .captions { position: relative; min-height: 260px; }
